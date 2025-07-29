@@ -4,8 +4,8 @@ This project is a clean and scalable Go CRUD API built using best practices.
 
 ## Author
 
-Amare Zewdie  
-📧 amarezewdie19@gmail.com  
+Amanuel Abrham 
+📧 abrhamamanuel3w@gmail.com  
 🌐 [GitHub Profile](https://github.com/amarezewdie)
 
 ## Features
