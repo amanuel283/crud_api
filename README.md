@@ -6,7 +6,7 @@ This project is a clean and scalable Go CRUD API built using best practices.
 
 Amanuel Abrham 
 📧 abrhamamanuel3w@gmail.com  
-🌐 [GitHub Profile](https://github.com/amarezewdie)
+🌐 [GitHub Profile]https://github.com/amanuel283
 
 ## Features
 
