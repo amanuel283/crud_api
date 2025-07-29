@@ -1,0 +1,189 @@
+definitions:
+  github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonRequest:
+    properties:
+      age:
+        minimum: 0
+        type: integer
+      hobbies:
+        items:
+          type: string
+        type: array
+      name:
+        type: string
+    required:
+    - age
+    - hobbies
+    - name
+    type: object
+  github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse:
+    properties:
+      age:
+        type: integer
+      hobbies:
+        items:
+          type: string
+        type: array
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/v1/person:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a list of persons with optional pagination.
+      parameters:
+      - description: Limit number of results
+        in: query
+        name: limit
+        type: integer
+      - description: Offset for pagination
+        in: query
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+      summary: Get all persons
+      tags:
+      - person
+  /api/v1/person/{personId}:
+    delete:
+      consumes:
+      - application/json
+      description: This endpoint deletes a person entry.
+      parameters:
+      - description: Person ID
+        in: path
+        name: personId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successfully deleted person
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+      summary: Delete person
+      tags:
+      - person
+    get:
+      consumes:
+      - application/json
+      description: This endpoint retrieves a single person entry.
+      parameters:
+      - description: Person ID
+        in: path
+        name: personId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+      summary: Get Single person
+      tags:
+      - person
+    put:
+      consumes:
+      - application/json
+      description: This endpoint updates a person's details.
+      parameters:
+      - description: Person ID
+        in: path
+        name: personId
+        required: true
+        type: string
+      - description: Person Data
+        in: body
+        name: dto.PersonRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+      summary: Update a person
+      tags:
+      - person
+  /api/v1/person/create:
+    post:
+      consumes:
+      - application/json
+      description: This endpoint creates a new person entry.
+      parameters:
+      - description: Person Data
+        in: body
+        name: dto.PersonRequest
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_izymalhaw_go-crud_yishakterefe_internal_api_dto.PersonResponse'
+      summary: Create a new person
+      tags:
+      - person
+swagger: "2.0"
