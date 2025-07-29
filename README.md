@@ -1,18 +1,33 @@
 # Go CRUD Challenge
 
-This project is a clean and scalable Go CRUD API built using best practices.
+A clean and scalable Go CRUD API built with best practices.
+
+---
 
 ## Author
 
-Amanuel Abrham 
+**Amanuel Abrham**  
 📧 abrhamamanuel3@gmail.com  
-🌐 [GitHub Profile]https://github.com/amanuel283
+🌐 [GitHub Profile](https://github.com/amanuel283)
+
+---
 
 ## Features
 
-- Hexagonal/Clean Architecture
-- RESTful APIs for managing resources
-- PostgreSQL/MariaDB support
-- Modular folder structure
-- Environment-based configuration
--JWT-based authentication
+- Clean / Hexagonal Architecture  
+- RESTful API for managing persons  
+- PostgreSQL / MariaDB support  
+- Modular structure  
+- Environment-based config  
+- JWT authentication (planned)  
+- Swagger docs  
+- Optional Docker support  
+
+---
+
+## Installation
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/amanuel283/go-crud-challenge.git
+   cd go-crud-challenge
