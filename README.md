@@ -8,7 +8,7 @@ A clean and scalable Go CRUD API built with best practices.
 
 **Amanuel Abrham**  
 📧 abrhamamanuel3@gmail.com  
-🌐 [GitHub Profile](https://github.com/amanuel283)
+🌐 [GitHub Profile]https://github.com/amanuel283
 
 ---
 
